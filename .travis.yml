@@ -1,7 +1,10 @@
 # original source: https://github.com/meteor-velocity/velocity-examples/blob/master/.travis.yml
 language: node_js
 
-sudo: required
+# sudo is required when meteor is installed for the meteor command to be added the path.
+# However, adding the .meteor directory to the path in the before script command
+# works around this.
+# sudo: required
 
 node_js:
   - "0.10"
@@ -35,5 +38,8 @@ before_install:
   # - "meteor reset"
   # give Meteor some time to download packages, init data, and to start
   - "sleep 50"
+
+before_script:
+  - "export PATH=$HOME/.meteor:$PATH"
 
 script: ./run.sh

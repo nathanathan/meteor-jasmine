@@ -30,7 +30,7 @@ before_install:
   - "cd test-app"
     # Optionally we can update all our dependencies here
     #- "meteor update"
-  - "meteor reset"
+  # - "meteor reset"
   # give Meteor some time to download packages, init data, and to start
   - "sleep 50"
 
